@@ -2,9 +2,14 @@ package hash
 
 import (
 	"fmt"
+	"hash"
 
 	"github.com/cespare/xxhash"
 )
+
+func NewXXH64() hash.Hash64 {
+	return xxhash.New()
+}
 
 // XXH64Sum returns the xxhash64 sum of the input
 func XXH64Sum(in []byte) (uint64, error) {
